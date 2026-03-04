@@ -29,6 +29,10 @@ struct CStrings2 : CArray2<std::string> {
 
     CStrings2 &operator=(const CStrings2 &other);
 
+    CStrings2(CStrings2 &&other) noexcept;
+
+    CStrings2 &operator=(CStrings2 &&other) noexcept;
+
     size_t size() const override;
 
     size_t capacity() const override;

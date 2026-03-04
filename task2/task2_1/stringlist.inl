@@ -17,6 +17,32 @@ CArray<T>::CArray(const CArray& other)
         arData_[i] = other.arData_[i];
 }
 
+template<typename T>
+CArray<T>::CArray(CArray<T> &&other) noexcept
+    : count_(other.count_), capacity_(other.capacity_), arData_(other.arData_)
+{
+    other.count_ = 0;
+    other.capacity_ = 0;
+    other.arData_ = nullptr;
+}
+
+template<typename T>
+CArray<T> &CArray<T>::operator=(CArray<T> &&other) noexcept
+{
+    if (this != &other) {
+        delete[] arData_;
+
+        count_ = other.count_;
+        capacity_ = other.capacity_;
+        arData_ = other.arData_;
+
+        other.count_ = 0;
+        other.capacity_ = 0;
+        other.arData_ = nullptr;
+    }
+    return *this;
+}
+
 template <typename T>
 CArray<T>& CArray<T>::operator=(const CArray& other) {
     if (this == &other) return *this;

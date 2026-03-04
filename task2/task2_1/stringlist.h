@@ -11,6 +11,10 @@ struct CArray {
 
     CArray &operator=(const CArray &other);
 
+    CArray(CArray &&other) noexcept;
+
+    CArray &operator=(CArray &&other) noexcept;
+
     size_t size() const;
 
     size_t capacity() const;

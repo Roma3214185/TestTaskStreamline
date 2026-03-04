@@ -29,6 +29,16 @@ CStrings2 &CStrings2::operator=(const CStrings2 &other) {
     return *this;
 }
 
+CStrings2::CStrings2(CStrings2 &&other) noexcept : CArray2<std::string>(std::move(other)) {}
+
+CStrings2 &CStrings2::operator=(CStrings2 &&other) noexcept {
+    if (this != &other) {
+        CArray2<std::string>::operator=(std::move(other));
+    }
+    return *this;
+}
+
+
 size_t CStrings2::size() const {
     return count_;
 }
