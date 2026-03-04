@@ -1,0 +1,31 @@
+@startuml
+
+top to bottom direction
+skinparam linetype ortho
+
+Root -down> Clothes
+Root -down> Boots
+
+Clothes -left> T-Shirts
+"T-Shirts" -left> Nike
+
+Clothes -down> Hoodies
+Hoodies -down> Adidas
+
+Clothes -down> Dresses
+Dresses -down> "H&M"
+
+Clothes -right> Skirts
+Skirts -down> Zara
+
+Boots -> Desert
+Desert -> Timberland
+
+Nike -down> item_23451
+Adidas -> item_23452
+"H&M" -> item_23453
+Zara -> item_23454
+Timberland -> item_23455
+
+
+@enduml
