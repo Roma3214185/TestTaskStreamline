@@ -1,1 +1,0 @@
-CMakeLists.txt not found in /Users/roma/CLionProjects/test_task/task1_1 Select CMakeLists.txt
